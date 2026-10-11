@@ -38,7 +38,7 @@ class User(Base):
 
     id = Column(Integer, primary_key=True)
     username = Column(String, nullable=False)
-    hashed_password = Column(String, nullable=False)
+    password = Column(String, nullable=False)
     phone = Column(String, nullable=False, unique=True, index=True)
     role = Column(SAEnum(UserRole), nullable=False, default=UserRole.CUSTOMER)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
