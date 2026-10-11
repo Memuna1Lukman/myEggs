@@ -19,7 +19,7 @@ def create_user(user: schemas.UserPost, db: Session = Depends(get_db)):
     new_user = models.User(
         username=user.username,
         phone=user.phone,
-        hashed_password=utils.get_password_hash(user.password),
+        password=utils.get_password_hash(user.password),
         role=models.UserRole.CUSTOMER,
     )
     try:
