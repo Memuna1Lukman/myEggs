@@ -20,7 +20,7 @@ def login_user(
     user = db.query(models.User).filter(models.User.phone == form.username).first()
 
     # One check, one message: don't reveal whether the phone is registered.
-    if not user or not utils.unhash_password(form.password, user.hashed_password):
+    if not user or not utils.verify_password(form.password, user.password):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid credentials",

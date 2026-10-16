@@ -1,0 +1,11 @@
+# Local environment configuration may contain credentials.
+/.env
+/raw/.env
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
