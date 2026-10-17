@@ -2,7 +2,7 @@ services:
     myeggs:
       build: .
       ports:
-        - "8000:8000"
+        - "8001:8000"
       volumes:
         - .:/Backend
       command: uvicorn raw.main:app --host 0.0.0.0 --port 8000
